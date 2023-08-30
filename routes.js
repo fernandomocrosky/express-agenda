@@ -19,6 +19,7 @@ route.route("/contato/index").get(loginRequired, contatoController.index);
 
 route.route("/contato/index/:id").get(contatoController.editIndex);
 route.route("/contato/edit/:id").post(contatoController.edit);
+route.route("/contato/delete/:id").get(contatoController.delete);
 
 route.route("/contato/register").post(contatoController.register);
 

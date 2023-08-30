@@ -7,17 +7,37 @@
       <p class="text-center lead">Seus contatos estão abaixo</p>
       <%- include("includes/messages.ejs") %>
 
-      <div class="responsive-table">
-        <table class="table my-3">
-          <tr>
-            <td>Fernando</td>
-            <td>Mocrosky</td>
-            <td>5132165121</td>
-            <td>fff@fff.com</td>
-          </tr>
-        </table>
+      <% if(contatos.length > 0) { %>
+        <div class="responsive-table">
+          <table class="table table-hover my-3">
+            <thead class="table-dark">
+              <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            <% contatos.forEach(contato => { %>
+              <tr>
+                <td><%= contato.name %></td>
+                <td><%= contato.sobrenome %></td>
+                <td><%= contato.email %></td>
+                <td><%= contato.tel %></td>
+                <td><a href="/contato/index/<%= contato._id %>">Editar</a></td>
+                <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+              </tr>
+            <% }) %>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    <% } else { %>
+      <p class="text-cente lead">Não exitem contatos na sua agenda</p>
+    <% } %>
     <div class="col-lg-2"></div>
   </div>
 </div>
