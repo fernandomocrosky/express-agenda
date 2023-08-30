@@ -12,15 +12,15 @@
         <div class="col-lg">
           <h4>Faça seu cadastro</h4>
           <p>Se ainda não tem conta, preencha o formulário abaixo</p>
-          <form action="/login/register" method="POST">
+          <form class="form-cadastro" action="/login/register" method="POST">
             <div class="form-group">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>">
               <label>Seu email:</label>
-              <input type="email" name="email" id="email" class="form-control"/>
+              <input type="email" name="email" id="emailregister" class="form-control"/>
             </div>
             <div class="form-group">
               <label>Sua Senha:</label>
-              <input type="password" name="password" id="password" class="form-control"/>
+              <input type="password" name="password" id="passwordlogin" class="form-control"/>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Criar minha conta</button>
           </form>
@@ -29,15 +29,15 @@
           <h4>Faça seu login</h4>
 
           <p>Se você ja tem uma conta faça login abaixo</p>
-          <form action="/login/login" method="POST">
+          <form class="form-login" action="/login/login" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="form-group">
               <label>Seu email:</label>
-              <input type="email" name="email" id="email" class="form-control"/>
+              <input type="email" name="email" id="emaillogin" class="form-control"/>
             </div>
             <div class="form-group">
               <label>Sua Senha:</label>
-              <input type="password" name="password" id="password" class="form-control"/>
+              <input type="password" name="password" id="passwordregister" class="form-control"/>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Entrar</button>
           </form>
